@@ -32,7 +32,7 @@ CREATE TABLE `user` (
   `account` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
   `password` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
   `name` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `role` char(1) CHARACTER SET ascii NOT NULL DEFAULT 'U',
+  `role` enum('S','T','M') COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -41,7 +41,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`account`, `password`, `name`, `role`, `created_at`) VALUES
-('root', 'password', '管理員', 'T', '2025-10-21 13:48:06'),
+('admin', 'password', '管理員', 'M', '2025-10-28 14:04:35'),
+('root', 'password', '陳老師', 'T', '2025-10-21 13:48:06'),
 ('user1', 'pw1', '小明', 'S', '2025-10-21 13:48:06'),
 ('user2', 'pw2', '小華', 'S', '2025-10-21 13:48:06'),
 ('user3', 'pw3', '小美', 'S', '2025-10-21 13:48:06'),
